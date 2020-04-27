@@ -18,15 +18,15 @@ class Solution {
     {
         if(root == null)
             return 0;
-        if(root.left == null && root.right == null)
+        if(root -> left == null && root -> right == null)
             return 1;
         
-        int leftSubtree = findDiameter(root.left);
-        int rightSubtree = findDiameter(root.right);
+        int leftSubtree = findDiameter(root -> left);
+        int rightSubtree = findDiameter(root -> right);
         
-        answer = Math.max(answer, Math.max(leftSubtree, rightSubtree));
+        answer = max(answer, Math.max(leftSubtree, rightSubtree));
         
-        answer = Math.max(answer, leftSubtree + rightSubtree);
+        answer = max(answer, leftSubtree + rightSubtree);
         
         return 1 + Math.max(leftSubtree, rightSubtree);
     }
@@ -34,7 +34,7 @@ class Solution {
         if(root == null)
             return 0;
         
-        if(root.left == null && root.right == null)
+        if(root -> left == null && root -> right == null)
             return 0;
         
         findDiameter(root);
